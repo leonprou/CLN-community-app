@@ -12,4 +12,4 @@ script: npm run lint
 jobs:
   include:
     - stage: build
-    script: npm run build
+      script: npm run build
