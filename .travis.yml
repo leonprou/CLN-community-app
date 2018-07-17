@@ -12,6 +12,4 @@ script: npm run lint
 jobs:
   include:
     - stage: build
-    before_install: cd $TRAVIS_BUILD_DIR/client
-    install: npm install
     script: npm run build
