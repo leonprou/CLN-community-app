@@ -6,5 +6,5 @@ install:
     - cd $TRAVIS_BUILD_DIR/server && npm install
     - cd $TRAVIS_BUILD_DIR/client && npm install
 script:
-  - cd $TRAVIS_BUILD_DIR/server npm run lint
-  - cd $TRAVIS_BUILD_DIR/client npm run build
+  - cd $TRAVIS_BUILD_DIR/server && npm run lint
+  - cd $TRAVIS_BUILD_DIR/client && npm run build
