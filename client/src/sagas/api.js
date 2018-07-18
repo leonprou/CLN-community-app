@@ -1,4 +1,4 @@
-import { all, takeEvery, put } from 'redux-saga/effects'
+// import { all, takeEvery, put } from 'redux-saga/effects'
 
 import * as api from 'services/api'
 import * as actions from 'actions/api'

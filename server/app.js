@@ -42,8 +42,7 @@ if (!isProduction) {
   mongoose.set('debug', true)
 }
 
-const a = 1
-require(  './models')
+require('./models')
 
 app.use(require('./routes'))
 
