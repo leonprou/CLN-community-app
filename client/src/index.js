@@ -11,6 +11,8 @@ const store = configureStore(window.__INITIAL_STATE__)
 
 store.runSaga(rootSaga)
 
+//badlint
+
 ReactDOM.render(<Root
   store={store} />,
 document.getElementById('root'))
