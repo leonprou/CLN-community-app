@@ -19,7 +19,7 @@ import 'scss/styles.scss'
 
 class App extends Component {
 	state = {
-		isWelcome: true
+		isWelcome: true,
 		out: false,
 		welcomeDone: false
 	}
