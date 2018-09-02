@@ -1,6 +1,7 @@
 linters:
   csslint: {  }
   standardjs:
+    parser: "babel-eslint"
   shellcheck:
     shell: bash
 files:
