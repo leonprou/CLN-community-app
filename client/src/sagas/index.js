@@ -1,15 +1,21 @@
 import { all, fork } from 'redux-saga/effects'
 
-import basicTokenSaga from './basicToken'
-import web3Saga from './web3'
-import apiSaga from './api'
+import communitiesSaga from './communities'
+import web3Saga from './network'
+import metadataSaga from './metadata'
 import marketMakerSaga from './marketMaker'
+import subscriptionsSaga from './subscriptions'
+import accountsSaga from './accounts'
+import issuanceSaga from './issuance'
 
 export default function * rootSaga () {
   yield all([
-    fork(basicTokenSaga),
-    fork(apiSaga),
+    fork(communitiesSaga),
+    fork(metadataSaga),
     fork(web3Saga),
-    fork(marketMakerSaga)
+    fork(marketMakerSaga),
+    fork(subscriptionsSaga),
+    fork(accountsSaga),
+    fork(issuanceSaga)
   ])
 }

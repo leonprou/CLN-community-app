@@ -2,9 +2,9 @@ const router = require('express').Router()
 const mongoose = require('mongoose')
 const IpfsAPI = require('ipfs-api')
 const race = require('async/race')
+const config = require('config')
 
-const auth = require('../auth')
-const ipfsConfig = require('../../config').ipfs
+const ipfsConfig = config.get('ipfs')
 
 const Metadata = mongoose.model('Metadata')
 
@@ -31,7 +31,7 @@ router.get('/:protocol/:hash', async (req, res, next) => {
   }
 })
 
-router.post('/', auth.required, async (req, res, next) => {
+router.post('/', async (req, res, next) => {
   const metadata = Buffer.from(JSON.stringify(req.body.metadata))
 
   const filesAdded = await ipfs.files.add(metadata)

@@ -1,11 +1,12 @@
 const router = require('express').Router()
 const IpfsAPI = require('ipfs-api')
 const multer = require('multer')
-const ipfsConfig = require('../../config').ipfs
-const amazonConfig = require('../../config').amazon
+const config = require('config')
+
+const ipfsConfig = config.get('ipfs')
+const amazonConfig = config.get('amazon')
 
 const upload = multer()
-const auth = require('../auth')
 
 const ipfs = new IpfsAPI(ipfsConfig)
 
@@ -22,7 +23,7 @@ router.get('/:hash', async (req, res) => {
   }
 })
 
-router.post('/', auth.required, upload.single('image'), async (req, res) => {
+router.post('/', upload.single('image'), async (req, res) => {
   const filesAdded = await ipfs.files.add(req.file.buffer)
   const hash = filesAdded[0].hash
 
