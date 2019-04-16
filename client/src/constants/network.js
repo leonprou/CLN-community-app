@@ -3,7 +3,7 @@ export const networkIdToName = {
   1: 'main',
   2: 'kovan',
   3: 'ropsten',
-  4: 'rinkeby'
+  4: "rinkeby"
 }
 
 export const networkNameToId = {
