@@ -6,11 +6,16 @@ USER root
 COPY . .
 RUN rm -rf node_modules && rm package-lock.json
 
-RUN ls -lah
+# RUN NODE_ENV=qa scripts/deploy.sh
 
-RUN ls -l scripts
+RUN cd contracts/entities && npm install && npm run build
 
-RUN NODE_ENV=qa scripts/deploy.sh
+RUN cd contracts/token-factory  && npm install && npm run build
+
+RUN cd dapp && npm install && npm run build && cp dist/* ../server/public
+
+RUN cd server && npm install
+
 RUN cp -r server/* . 
 RUN ls -lah
 #RUN npm ls 2>&1
