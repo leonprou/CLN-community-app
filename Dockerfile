@@ -10,7 +10,7 @@ RUN ls -lah
 
 RUN ls -l scripts
 
-RUN export NODE_ENV=qa scripts/deploy.sh
+RUN NODE_ENV=qa scripts/deploy.sh
 RUN cp -r server/* . 
 RUN ls -lah
 #RUN npm ls 2>&1
