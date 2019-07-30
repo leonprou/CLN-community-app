@@ -18,10 +18,12 @@ async function initConfig () {
 }
 
 async function init () {
+  console.log('hello world')
+
   await initConfig()
 
   console.log(util.inspect(config, { depth: null }))
-
+  console.log('hello world')
   var isProduction = process.env.NODE_ENV === 'production'
 
   var app = express()
